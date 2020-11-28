@@ -320,7 +320,7 @@
   
   <Target Name="ChooseConfigurationsToRestore">
     <ItemGroup>
-      <ProjectToRestore Include="$(MSBuildThisFileDirectory)Win2D.uap.sln" />
+      <ProjectToRestore Include="$(MSBuildThisFileDirectory)Win2D.NET.sln" />
 
       <!-- Expand parameter properties into item groups, so we can batch over them -->
       <BuildPlatform Include="$(BuildPlatforms)" />
