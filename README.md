@@ -6,8 +6,8 @@ writing apps for the Windows Universal Platform (UWP). It utilizes the power
 of Direct2D, and integrates seamlessly with XAML and CoreWindow.
 
 ##### Where to get it
-- [NuGet package](http://www.nuget.org/packages/Win2D.uwp)
-- [Source code](http://github.com/Microsoft/Win2D)
+- [NuGet package](http://www.nuget.org/packages/Win2D.NET)
+- [Source code](http://github.com/ShankarBUS/Win2D)
 
 ##### How to use it
 - [Documentation](http://microsoft.github.io/Win2D)
@@ -77,7 +77,7 @@ Studio, add the Win2D NuGet package to your project, and get started using the A
 
 ##### Build NuGet Packages
 - Launch 'Developer Command Prompt for VS2019'
-- Change directory to your cloned Win2D repository and run 'build'
+- Change directory to your cloned Win2D repository and run 'build' or 'build-net' (also includes a .NET 5 compatible interop assembly)
 
 ##### Point Visual Studio at the resulting 'bin' directory
 - In Visual Studio, go to 'Tools' -> 'NuGet Package Manager' -> 'Package Manager Settings'
