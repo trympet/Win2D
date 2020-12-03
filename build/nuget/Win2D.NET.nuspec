@@ -7,15 +7,18 @@
         <authors>Microsoft;ShankarBUS</authors>
         <owners>win2d,microsoft</owners>
         <description>An easy-to-use Windows Runtime API for immediate mode 2D graphics rendering. (with .NET 5 support)</description>
-        <projectUrl>http://go.microsoft.com/fwlink/?LinkID=519078</projectUrl>
-        <iconUrl>http://raw.githubusercontent.com/Microsoft/Win2D/master/samples/ExampleGallery/WindowsPhone/Assets/Square71x71Logo.scale-240.png</iconUrl>
-        <licenseUrl>$LicenseUrl$</licenseUrl>
-        <requireLicenseAcceptance>$RequireLicenseAcceptance$</requireLicenseAcceptance>
+        <projectUrl>https://github.com/ShankarBUS/Win2D</projectUrl>
+		<repository type="git" url="https://github.com/ShankarBUS/Win2D.git" />
+        <icon>images\logo.png</icon>
+        <license type="expression">MIT</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <copyright>© Microsoft Corporation. All rights reserved.</copyright>
         <tags>graphics 2D Direct2D DirectX WinRT XAML canvas drawing C# C++ Windows UWP UAP Universal Windows Platform .NET 5</tags>
     </metadata>
 
     <files>
+
+      <file target="images\logo.png"                                          src="build\Assets\Logo.png" />
 
       <file target="Win2d.githash.txt"                                       src="obj\Win2d.githash.txt" />
 

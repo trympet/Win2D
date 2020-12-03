@@ -55,7 +55,7 @@ SET NUGET_ARGS=^
     -basepath ..\.. ^
     -outputdirectory %OUTDIR% ^
     -version %VERSION% ^
-    -properties bin=%BIN%;LicenseUrl=%LICENSE_URL%;RequireLicenseAcceptance=%REQUIRE_LICENSE_ACCEPTANCE%
+    -properties bin=%BIN%
 
 nuget pack Win2D.NET.nuspec %NUGET_ARGS%
 
