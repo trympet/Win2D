@@ -16,7 +16,7 @@
     <MergedWinmdDirectory>$(MSBuildThisFileDirectory)..\..\bin\UAPx86\$(Configuration)\MergedWinMD</MergedWinmdDirectory>
     <AssemblyName>Microsoft.Graphics.Canvas.interop</AssemblyName>
     <RootNamespace>Microsoft.Graphics.Canvas</RootNamespace>
-    <!--<CsWinRtIncludes></CsWinRtIncludes>-->
+    <CsWinRtIncludes>Microsoft.Graphics.Canvas</CsWinRtIncludes>
     <CsWinRTExcludes>Windows;Microsoft.Graphics.Canvas.UI.Xaml</CsWinRTExcludes>
   </PropertyGroup>
   
