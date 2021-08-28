@@ -21,11 +21,6 @@ namespace Microsoft.Graphics.Canvas.UI.Composition
             [in]          Microsoft.Graphics.Canvas.CanvasDevice* canvasDevice,
             [out, retval] Windows.UI.Composition.CompositionGraphicsDevice** graphicsDevice);
 
-        HRESULT CreateCompositionSurfaceForSwapChain(
-            [in]          Windows.UI.Composition.Compositor* compositor,
-            [in]          Microsoft.Graphics.Canvas.CanvasSwapChain* swapChain,
-            [out, retval] Windows.UI.Composition.ICompositionSurface** compositionSurface);
-
         
         //
         // CompositionGraphicsDevice interop

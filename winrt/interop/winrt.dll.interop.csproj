@@ -3,20 +3,26 @@
     <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
     <Platforms>x64</Platforms>
     <NoWarn>CA1416;CS0108</NoWarn>
+    <WinRtPlatform>uapx64</WinRtPlatform>
   </PropertyGroup>
 
   <ItemGroup>
     <!--<ProjectReference Include="..\SimpleMathComponent\SimpleMathComponent.vcxproj" />-->
-    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\obj\winrt.dll.interop\x64\debug\net5.0-windows10.0.19041.0\**\Generated Files\*" />
   </ItemGroup>
   
   <Import Project="..\..\build\Win2D.cs.props" />
   
   <PropertyGroup>
-    <MergedWinmdDirectory>$(MSBuildThisFileDirectory)..\..\bin\UAPx86\$(Configuration)\MergedWinMD</MergedWinmdDirectory>
+    <MergedWinmdDirectory>$(MSBuildThisFileDirectory)..\..\bin\$(WinRtPlatform)\$(Configuration)\MergedWinMD</MergedWinmdDirectory>
     <AssemblyName>Microsoft.Graphics.Canvas.interop</AssemblyName>
     <RootNamespace>Microsoft.Graphics.Canvas</RootNamespace>
-    <CsWinRtIncludes>Microsoft.Graphics.Canvas</CsWinRtIncludes>
+    <!--<CsWinRtIncludes>Microsoft.Graphics.Canvas</CsWinRtIncludes>-->
+    <CsWinRtIncludes>Microsoft.Graphics.Canvas.Effects;Microsoft.Graphics.Canvas.UI.Composition.CanvasComposition;Microsoft.Graphics.Canvas.ICanvasResourceCreator;Microsoft.Graphics.Canvas.ICanvasImage;Microsoft.Graphics.Canvas.CanvasBufferPrecision;Microsoft.Graphics.Canvas.CanvasImageInterpolation;Microsoft.Graphics.Canvas.CanvasAlphaMode;Microsoft.Graphics.Canvas.CanvasDpiRounding;Microsoft.Graphics.Canvas.CanvasEdgeBehavior;Microsoft.Graphics.Canvas.CanvasDrawingSession;Microsoft.Graphics.Canvas.CanvasDevice;Microsoft.Graphics.Canvas.ICanvasDevice;Microsoft.Graphics.Canvas.CanvasImage;Microsoft.Graphics.Canvas.CanvasBitmapFileFormat;Microsoft.Graphics.Canvas.ICanvasCompositionStatics;Microsoft.Graphics.Canvas.ICanvasDrawingSession;Microsoft.Graphics.Canvas.CanvasDebugLevel;Microsoft.Graphics.Canvas.CanvasBitmap;Microsoft.Graphics.Canvas.ICanvasBitmap;Microsoft.Graphics.Canvas.ICanvasBitmapFactory;Microsoft.Graphics.Canvas.ICanvasBitmapStatics;Microsoft.Graphics.Canvas.ICanvasLock;Microsoft.Graphics.Canvas.CanvasLock;Microsoft.Graphics.Canvas.CanvasComposite;Microsoft.Graphics.Canvas.CanvasActiveLayer;Microsoft.Graphics.Canvas.CanvasImageInterpolation;Microsoft.Graphics.Canvas.CanvasAlphaMode;Microsoft.Graphics.Canvas.CanvasDpiRounding;Microsoft.Graphics.Canvas.CanvasEdgeBehavior;Microsoft.Graphics.Canvas.CanvasDrawingSession;Microsoft.Graphics.Canvas.CanvasDevice;Microsoft.Graphics.Canvas.ICanvasDevice;Microsoft.Graphics.Canvas.CanvasImage;Microsoft.Graphics.Canvas.CanvasBitmapFileFormat;Microsoft.Graphics.Canvas.ICanvasCompositionStatics;Microsoft.Graphics.Canvas.ICanvasDrawingSession;Microsoft.Graphics.Canvas.CanvasDebugLevel;Microsoft.Graphics.Canvas.CanvasBitmap;Microsoft.Graphics.Canvas.ICanvasBitmap;Microsoft.Graphics.Canvas.ICanvasBitmapFactory;Microsoft.Graphics.Canvas.ICanvasBitmapStatics;Microsoft.Graphics.Canvas.ICanvasLock;Microsoft.Graphics.Canvas.CanvasLock;Microsoft.Graphics.Canvas.CanvasComposite;Microsoft.Graphics.Canvas.ICanvasActiveLayer;Microsoft.Graphics.Canvas.CanvasAntialiasing;Microsoft.Graphics.Canvas.CanvasBlend;ABI.Microsoft.Graphics.Canvas.Geometry;Microsoft.Graphics.Canvas.CanvasColorSpace;Microsoft.Graphics.Canvas.CanvasUnits;Microsoft.Graphics.Canvas.UI.Composition.ICanvasCompositionStatics</CsWinRtIncludes>
     <CsWinRTExcludes>Windows;Microsoft.Graphics.Canvas.UI.Xaml</CsWinRTExcludes>
   </PropertyGroup>
   
@@ -31,7 +37,7 @@
       -in $(TargetPlatformVersion)
       -in $(MergedWinmdDirectory)\$(RootNamespace).winmd
       -exclude $(CsWinRTExcludes)
-      -include $(RootNamespace)
+      -include $(CsWinRtIncludes)
       -out "$(IntermediateOutputPath)$(TargetFramework)\Generated Files"
     </CsWinRTParams>
   </PropertyGroup>

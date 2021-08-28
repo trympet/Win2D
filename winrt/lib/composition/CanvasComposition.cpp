@@ -56,26 +56,6 @@ IFACEMETHODIMP CanvasCompositionStatics::CreateCompositionGraphicsDevice(
 }
 
 
-IFACEMETHODIMP CanvasCompositionStatics::CreateCompositionSurfaceForSwapChain( 
-    ICompositor* compositor,
-    ICanvasSwapChain* swapChain,
-    ICompositionSurface** compositionSurface)
-{
-    return ExceptionBoundary(
-        [&]
-        {
-            CheckInPointer(compositor);
-            CheckInPointer(swapChain);
-            CheckAndClearOutPointer(compositionSurface);
-            
-            auto compositorInterop = As<ICompositorInterop>(compositor);
-            auto dxgiSwapChain = GetWrappedResource<IDXGISwapChain>(swapChain);
-            
-            ThrowIfFailed(compositorInterop->CreateCompositionSurfaceForSwapChain(dxgiSwapChain.Get(), compositionSurface));
-        });
-}
-
-
 IFACEMETHODIMP CanvasCompositionStatics::GetCanvasDevice( 
     ICompositionGraphicsDevice* graphicsDevice,
     ICanvasDevice** canvasDevice)
